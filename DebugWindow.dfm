@@ -85,6 +85,7 @@ object fmDebug: TfmDebug
   OldCreateOrder = True
   Position = poScreenCenter
   Scaled = False
+  StyleName = 'Charcoal Dark Slate'
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate

@@ -4,9 +4,12 @@ uses
   Windows,
   Forms,
   DebugOptions in 'DebugOptions.pas' {fmDebugOptions},
-  DebugWindow in 'DebugWindow.pas' {fmDebug};
+  DebugWindow in 'DebugWindow.pas' {fmDebug},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *_icon.res}
+{$R *.res}
 
 var
   PrvHWND: HWND;
@@ -28,6 +31,7 @@ begin
   Application.Title             := 'Baz Debug Window'; // Do not localize.
   Application.ShowMainForm      := FALSE;     // BAZ
   Application.MainFormOnTaskBar := TRUE;      // BAZ
+  TStyleManager.TrySetStyle('Charcoal Dark Slate');
   Application.CreateForm(TfmDebug, fmDebug);
   Application.Run;
 end.
