@@ -457,16 +457,16 @@ begin
 //  SetDefaultFont(Self);         // BAZ
 //  SetToolbarGradient(Toolbar);  // BAZ
   Application.OnMessage := ApplicationMsgHandler;
-  FStayOnTop := False;
-  Application.ShowHint := True;
-  Caption := Application.Title;
+  FStayOnTop            := False;
+  Application.ShowHint  := True;
+  Caption               := Application.Title;
 
-  FTaskIcon := TTrayIcon.Create(Self);
-  FTaskIcon.Icon := Icon;
-  FTaskIcon.Active := True;
-  FTaskIcon.PopupMenu := pmuTaskBar;
-  FTaskIcon.ToolTip := Application.Title;
-  FTaskIcon.OnDblClick := TrayIconDblClick;
+  FTaskIcon             := TTrayIcon.Create(Self);
+  FTaskIcon.Icon        := Icon;
+  FTaskIcon.Active      := True;
+  FTaskIcon.PopupMenu   := pmuTaskBar;
+  FTaskIcon.ToolTip     := Application.Title;
+  FTaskIcon.OnDblClick  := TrayIconDblClick;
 
   FAllowClose := False;
 

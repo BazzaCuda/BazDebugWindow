@@ -36,6 +36,7 @@ procedure debugseparator;
 procedure debugString(const identifier: string; const value: string);
 procedure debugStringList(const identifier: string; const value: TStringList);
 procedure debugWarning(const msg: string);
+function  showDebugMessage(msg: string): boolean;
 function  startDebugWin: hWnd;
 
 implementation
@@ -60,6 +61,12 @@ var
   debugPaused: boolean = False;
 
 //===========================
+function showDebugMessage(msg: string): boolean;
+begin
+  debug(msg);
+  showMessage(msg);
+end;
+
 function startDebugWin: hWnd;
 var
   debugFileName: string;
