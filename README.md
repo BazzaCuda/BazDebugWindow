@@ -4,7 +4,7 @@ BazDebugWindow is a reworking of the original DebugWindow by GExperts, renamed a
 
 A very useful tool for Delphi developers - say "goodbye" to all those ShowMessage(...) calls while trying to debug your program.
 
-![Clipboard Image](https://github.com/BazzaCuda/BazDebugWindow/assets/22550919/ca3ac051-2db6-4d99-beca-a6831e49dd55)
+![BazDebugWindow](https://github.com/BazzaCuda/BazDebugWindow/assets/22550919/8beab9d4-c578-4ab5-8d58-500f7d847769)
 
 The BazDebugWindow will pop-up in the bottom righthand corner of your Windows desktop when you send it a debug message.
 
