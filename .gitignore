@@ -71,5 +71,5 @@ modules/
 # developer's privilege
 dcu/
 Win64/
-debugWindow_release_v1_0_/
+BazDebugWindow_release_v1_0_/
 docs/
