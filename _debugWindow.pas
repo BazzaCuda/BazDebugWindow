@@ -29,6 +29,7 @@ procedure debugFormatEx(const msg: string; const args: array of const; MType: Tm
 procedure debugIndent;
 procedure debugint64(const identifier: string; const value: int64);
 procedure debuginteger(const identifier: string; const value: integer);
+procedure debugLongint(const identifier: string; const value: longint);
 procedure debugMethodEnter(const methodName: string);
 procedure debugMethodExit(const methodName: string);
 procedure debugOutdent;
@@ -239,6 +240,11 @@ begin
 end;
 
 procedure debuginteger(const identifier: string; const value: integer);
+begin
+  debugEx(format('%s = %d', [identifier, value]), mtInformation);
+end;
+
+procedure debugLongint(const identifier: string; const value: longint);
 begin
   debugEx(format('%s = %d', [identifier, value]), mtInformation);
 end;
