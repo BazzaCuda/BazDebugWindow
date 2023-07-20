@@ -37,7 +37,6 @@ var
       reg.writeString('filePath', aPath);
       reg.writeString('width', '500');
       reg.writeString('height', '320');
-      reg.writeString('savePath', '');
       reg.writeString('viewToolbar', '1');
       reg.writeString('stayOnTop', '0');
       reg.closeKey;
@@ -62,7 +61,6 @@ var
       SL.add('[HKEY_CURRENT_USER\SOFTWARE\Baz\Debug]');
       SL.add(replaceStr(aPath, '\', '\\'));
       SL.add('"height"="320"');
-      SL.add('"savePath"=""');
       SL.add('"stayOnTop"="0"');
       SL.add('"viewToolBar"="1"');
       SL.add('"width"="500"');
