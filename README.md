@@ -82,7 +82,7 @@ More details to follow
 
 I will expand on each of these later - I just wanted to get a basic "readme" file into the first release.zip file.
 
-Any questions or issues, go to Discussions.
+Any questions or issues, go to Discussions (https://github.com/BazzaCuda/BazDebugWindow/discussions)
 
 regards,
 Baz.
