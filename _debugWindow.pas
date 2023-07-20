@@ -34,7 +34,7 @@ procedure debugMethodExit(const methodName: string);
 procedure debugOutdent;
 procedure debugPause;
 procedure debugResume;
-procedure debugseparator;
+procedure debugSeparator;
 procedure debugString(const identifier: string; const value: string);
 procedure debugStringList(const identifier: string; const value: TStringList);
 procedure debugWarning(const msg: string);
@@ -270,7 +270,7 @@ begin
   debugPaused := False;
 end;
 
-procedure debugseparator;
+procedure debugSeparator;
 const
   separatorString = '------------------------------';
 begin
