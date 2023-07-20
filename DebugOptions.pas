@@ -1,3 +1,15 @@
+(*
+ * GExperts Debug Window Interface
+ * http://www.gexperts.org
+ *
+ * You are free to use this code in any application to send commands to the
+ * GExperts debug window.  This includes usage in commercial, shareware,
+ * freeware, public domain, and other applications.
+ *)
+
+ //
+ // Baz Cuda, 2022: Renamed, rejigged, camelhumped and augmented.
+ //                 All credit rests with the original authors for this very handy tool.
 unit DebugOptions;
 
 interface
@@ -50,12 +62,11 @@ procedure TDebugConfigData.LoadSettings;
 var
   Settings: TRegIniFile;
 begin
-  // Do not localize
-  Settings := TRegIniFile.Create('Software\Baz\Debug');
+  Settings := TRegIniFile.Create('Software\Baz\Debug'); // Do not localize
   try
-    Start := Settings.ReadBool('View', 'Startup', False);
-    OnMessage := Settings.ReadBool('View', 'OnMessage', False);
-    Bottom := Settings.ReadBool('Messages', 'Bottom', False);
+    Start := Settings.ReadBool('View', 'startup', False);
+    OnMessage := Settings.ReadBool('View', 'onMessage', TRUE);
+    Bottom := Settings.ReadBool('Messages', 'bottom', False);
   finally
     FreeAndNil(Settings);
   end;
@@ -67,9 +78,9 @@ var
 begin
   Settings := TRegIniFile.Create('Software\Baz\Debug');
   try
-    Settings.WriteBool('View', 'Startup', Start);
-    Settings.WriteBool('View', 'OnMessage', OnMessage);
-    Settings.WriteBool('Messages', 'Bottom', Bottom);
+    Settings.WriteBool('View', 'startup', Start);
+    Settings.WriteBool('View', 'onMessage', OnMessage);
+    Settings.WriteBool('Messages', 'bottom', Bottom);
   finally
     FreeAndNil(Settings);
   end;

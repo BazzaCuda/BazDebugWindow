@@ -1,3 +1,15 @@
+(*
+ * GExperts Debug Window Interface
+ * http://www.gexperts.org
+ *
+ * You are free to use this code in any application to send commands to the
+ * GExperts debug window.  This includes usage in commercial, shareware,
+ * freeware, public domain, and other applications.
+ *)
+
+ //
+ // Baz Cuda, 2022: Renamed, rejigged, camelhumped and augmented.
+ //                 All credit rests with the original authors for this very handy tool.
 unit DebugWindow;
 
 // {$I GX_CondDefine.inc} // BAZ
@@ -223,14 +235,7 @@ begin
   if not Visible then
     FTaskIcon.Icon := imgMessage.Picture.Icon;
   if (ConfigInfo.OnMessage) and NOT vClearWindow then // BAZ don't show the window just because of a clearWindow command
-  begin
-    if IsIconic(Application.Handle) then
-    begin
-      ShowWindow(Application.Handle, SW_RESTORE);
-      SetForegroundWindow(Application.Handle);
-    end;
-    Show;
-  end;
+    actViewShow.Execute;
 end;
 
 procedure TfmDebug.TrayIconDblClick(Sender: TObject);
@@ -281,13 +286,13 @@ var
 begin
   Settings := TRegIniFile.Create('Software\Baz');
   try
-    Settings.WriteInteger('Debug', 'Left', Left);
-    Settings.WriteInteger('Debug', 'Top', Top);
-    Settings.WriteInteger('Debug', 'Width', Width);
-    Settings.WriteInteger('Debug', 'Height', Height);
-    Settings.WriteString('Debug', 'SavePath', dlgSaveLog.InitialDir);
-    Settings.WriteBool('Debug', 'ViewToolBar', ToolBar.Visible);
-    Settings.WriteBool('Debug', 'StayOnTop', FStayOnTop);
+//    Settings.WriteInteger('Debug', 'left', Left); // BAZ
+//    Settings.WriteInteger('Debug', 'top', Top);   // BAZ
+    Settings.WriteInteger('Debug', 'width', Width);
+    Settings.WriteInteger('Debug', 'height', Height);
+    Settings.WriteString('Debug', 'savePath', dlgSaveLog.InitialDir);
+    Settings.WriteBool('Debug', 'viewToolBar', ToolBar.Visible);
+    Settings.WriteBool('Debug', 'stayOnTop', FStayOnTop);
   finally
     FreeAndNil(Settings);
   end;
@@ -306,11 +311,11 @@ begin
   try
 //    Left := Settings.ReadInteger('Debug', 'Left', Left); // BAZ
 //    Top := Settings.ReadInteger('Debug', 'Top', Top);    // BAZ
-    Width := Settings.ReadInteger('Debug', 'Width', Width);
-    Height := Settings.ReadInteger('Debug', 'Height', Height);
-    ToolBar.Visible := Settings.ReadBool('Debug', 'ViewToolBar', True);
-    StayOnTop := Settings.ReadBool('Debug', 'StayOnTop', False);
-    dlgSaveLog.InitialDir := Settings.ReadString('Debug', 'SavePath', '');
+    Width := Settings.ReadInteger('Debug', 'width', Width);
+    Height := Settings.ReadInteger('Debug', 'height', Height);
+    ToolBar.Visible := Settings.ReadBool('Debug', 'viewToolBar', True);
+    StayOnTop := Settings.ReadBool('Debug', 'stayOnTop', False);
+    dlgSaveLog.InitialDir := Settings.ReadString('Debug', 'savePath', '');
   finally
     FreeAndNil(Settings);
   end;

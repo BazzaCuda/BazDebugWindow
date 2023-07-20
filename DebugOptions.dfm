@@ -11,13 +11,11 @@ object fmDebugOptions: TfmDebugOptions
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
     312
     177)
-  PixelsPerInch = 96
   TextHeight = 13
   object gbxView: TGroupBox
     Left = 8

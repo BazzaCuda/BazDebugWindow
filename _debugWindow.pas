@@ -19,6 +19,7 @@ uses
 
 procedure debug(const msg: string);
 procedure debugBoolean(const identifier: string; const value: boolean);
+procedure debugCardinal(const identifier: string; const value: cardinal);
 procedure debugClear;
 procedure debugDateTime(const identifier: string; const value: TDateTime);
 procedure debugError(const msg: string);
@@ -26,6 +27,7 @@ procedure debugEx(const msg: string; MType: TMsgDlgType);
 procedure debugFormat(const msg: string; const args: array of const);
 procedure debugFormatEx(const msg: string; const args: array of const; MType: TmsgDlgType);
 procedure debugIndent;
+procedure debugint64(const identifier: string; const value: int64);
 procedure debuginteger(const identifier: string; const value: integer);
 procedure debugMethodEnter(const methodName: string);
 procedure debugMethodExit(const methodName: string);
@@ -137,6 +139,11 @@ begin
     debugEx(identifier + ' = FALSE', mtInformation);
 end;
 
+procedure debugCardinal(const identifier: string; const value: cardinal);
+begin
+  debugEx(format('%s = %d', [identifier, value]), mtInformation);
+end;
+
 procedure debugClear;
 begin
   debug(string(chrClearCommand));
@@ -210,12 +217,12 @@ end;
 
 procedure debugFormat(const msg: string; const args: array of const);
 begin
-  debugEx(Format(msg, args), mtInformation);
+  debugEx(format(msg, args), mtInformation);
 end;
 
 procedure debugFormatEx(const msg: string; const args: array of const; MType: TmsgDlgType);
 begin
-  debugEx(Format(msg, args), MType);
+  debugEx(format(msg, args), MType);
 end;
 
 const
@@ -226,9 +233,14 @@ begin
   msgPrefix := msgPrefix + INDENTATION;
 end;
 
+procedure debugint64(const identifier: string; const value: int64);
+begin
+  debugEx(format('%s = %d', [identifier, value]), mtInformation);
+end;
+
 procedure debuginteger(const identifier: string; const value: integer);
 begin
-  debugEx(Format('%s = %d', [identifier, value]), mtInformation);
+  debugEx(format('%s = %d', [identifier, value]), mtInformation);
 end;
 
 procedure debugMethodEnter(const methodName: string);
@@ -267,7 +279,7 @@ end;
 
 procedure debugString(const identifier: string; const value: string);
 begin
-  debugEx(Format('%s = %s', [identifier, value]), mtInformation);
+  debugEx(format('%s = %s', [identifier, value]), mtInformation);
 end;
 
 procedure debugStringList(const identifier: string; const value: TStringList);

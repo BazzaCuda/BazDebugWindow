@@ -82,7 +82,6 @@ object fmDebug: TfmDebug
     0001F0000003F800000FFC00003FFE0000FFFF0003FFFF800FFFFFC03FFFFFE0
     FFFFFFF3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   Menu = MainMenu
-  OldCreateOrder = True
   Position = poScreenCenter
   Scaled = False
   StyleName = 'Charcoal Dark Slate'
@@ -91,7 +90,6 @@ object fmDebug: TfmDebug
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object imgMessage: TImage
     Left = 16
@@ -184,6 +182,7 @@ object fmDebug: TfmDebug
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
+    ExplicitWidth = 482
     object tbnClear: TToolButton
       Left = 0
       Top = 0
@@ -250,6 +249,8 @@ object fmDebug: TfmDebug
     TabOrder = 0
     ViewStyle = vsReport
     OnDblClick = lvMessagesDblClick
+    ExplicitWidth = 482
+    ExplicitHeight = 234
   end
   object pmuTaskBar: TPopupMenu
     Images = ilImages
