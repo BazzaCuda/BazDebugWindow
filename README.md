@@ -18,8 +18,8 @@ There are numerous other calls which can be made which I will detail below.
 Initial Installation
 --------------------
 
-1. Download the _debugWindow.pas unit from the source code and save it to any folder.
-2. Download the latest BazDebugWindow_release_v1_n_n.zip file from "Releases" and unzip it to a folder of your choice.
+1. Download the latest BazDebugWindow_release_v1_n_n.zip file from "Releases" and unzip it to a folder of your choice.
+2. Note that the folder now also contains the _debugWindow.pas unit for inclusion in your project.
 3. Run the BazDebugWindow.exe - it will appear minimized in the system tray on your desktop.
 
 When the app runs, it will try to write it's installation location to the registry at
