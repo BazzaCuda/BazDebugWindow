@@ -83,7 +83,7 @@ begin
   PrvHWND := FindWindow('TApplication', 'Baz Debug Window');
   case PrvHWND <> 0 of TRUE:  begin
                                 case IsIconic(PrvHWND) of TRUE: ShowWindow(PrvHWND, SW_RESTORE); end;
-                                SetForegroundWindow(PrvHWND);
+//                                SetForegroundWindow(PrvHWND);
                                 HALT; end;end;
 
   // write app location to registry so it can find itself ("Hommmmmmmm")
