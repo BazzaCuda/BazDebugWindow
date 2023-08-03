@@ -96,7 +96,7 @@ begin
     debugFileName := extractFilePath(strPas(buf)) + 'BazDebugWindow.exe'; // Do not localize.
   end;
 
-  if (trim(debugFileName) = '') or not fileExists(debugFileName) then
+  if (trim(debugFileName) = '') or NOT fileExists(debugFileName) then
   begin
     pastFailedAttemptTostartDebugWin := TRUE;
     EXIT;
@@ -106,7 +106,7 @@ begin
   si.cb := sizeOf(si);
   si.dwFlags := STARTF_USESHOWWINDOW;
   si.wShowWindow := SW_SHOW;
-  if not createProcess(PChar(debugFileName), NIL, NIL, NIL,
+  if NOT createProcess(PChar(debugFileName), NIL, NIL, NIL,
                        FALSE, 0, NIL, NIL, si, pi) then
   begin
     pastFailedAttemptTostartDebugWin := TRUE;
