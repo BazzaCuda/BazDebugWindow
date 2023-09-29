@@ -218,7 +218,7 @@ end;
 
 procedure debugFormat(const msg: string; const args: array of const);
 begin
-  debugEx(format(msg, args), mtInformation);
+  debugFormatEx(msg, args, mtInformation);
 end;
 
 procedure debugFormatEx(const msg: string; const args: array of const; MType: TmsgDlgType);
