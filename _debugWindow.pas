@@ -15,13 +15,19 @@ unit _debugWindow;
 interface
 
 uses
-  Windows, Dialogs, System.Classes; // We need "Dialogs" for TMsgDlgType
+  windows, dialogs, system.classes, system.generics.collections; // We need "Dialogs" for TMsgDlgType
+
+type
+   TDebug = class(TObject)
+     class function debugEnum<T>(const identifier: string; const value:T): string;
+   end;
 
 procedure debug(const msg: string);
 procedure debugBoolean(const identifier: string; const value: boolean);
 procedure debugCardinal(const identifier: string; const value: cardinal);
 procedure debugClear;
 procedure debugDateTime(const identifier: string; const value: TDateTime);
+procedure debugDouble(const identifier: string; const value: double);
 procedure debugError(const msg: string);
 procedure debugEx(const msg: string; MType: TMsgDlgType);
 procedure debugFormat(const msg: string; const args: array of const);
@@ -48,7 +54,8 @@ uses
   Messages,
   SysUtils,
   Registry,
-  Forms; // We need "Forms" for the Application object
+  Forms, // We need "Forms" for the Application object
+  RTTI;
 
 threadvar
   msgPrefix: string;
@@ -153,6 +160,11 @@ end;
 procedure debugDateTime(const identifier: string; const value: TDateTime);
 begin
   debugEx(identifier + ' = ' + DateTimeToStr(value), mtInformation);
+end;
+
+procedure debugDouble(const identifier: string; const value: double);
+begin
+  debugEx(identifier + ' = ' + floatToStr(value), mtInformation);
 end;
 
 procedure debugError(const msg: string);
@@ -303,6 +315,14 @@ end;
 procedure debugWarning(const msg: string);
 begin
   debugEx(msg, mtWarning);
+end;
+
+{ TDebug }
+
+class function TDebug.debugEnum<T>(const identifier: string; const value: T): string;
+begin
+  result := TRttiEnumerationType.getName(value);
+  debugEx(format('%s = %s', [identifier, result]), mtInformation);
 end;
 
 end.
