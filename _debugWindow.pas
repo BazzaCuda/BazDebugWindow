@@ -19,7 +19,7 @@ uses
 
 type
    TDebug = class(TObject)
-     class function debugEnum<T>(const identifier: string; const value:T): string;
+     class procedure debugEnum<T>(const identifier: string; const value: T);
    end;
 
 procedure debug(const msg: string);
@@ -319,10 +319,10 @@ end;
 
 { TDebug }
 
-class function TDebug.debugEnum<T>(const identifier: string; const value: T): string;
+class procedure TDebug.debugEnum<T>(const identifier: string; const value: T);
 begin
-  result := TRttiEnumerationType.getName(value);
-  debugEx(format('%s = %s', [identifier, result]), mtInformation);
+  var vResult := TRttiEnumerationType.getName(value);
+  debugEx(format('%s = %s', [identifier, Vresult]), mtInformation);
 end;
 
 end.
