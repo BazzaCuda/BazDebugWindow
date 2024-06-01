@@ -322,7 +322,7 @@ end;
 class procedure TDebug.debugEnum<T>(const identifier: string; const value: T);
 begin
   var vResult := TRttiEnumerationType.getName(value);
-  debugEx(format('%s = %s', [identifier, Vresult]), mtInformation);
+  debugEx(format('%s = %s', [identifier, vResult]), mtInformation);
 end;
 
 end.
