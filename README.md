@@ -60,6 +60,8 @@ procedure debugDateTime(const identifier: string; const value: TDateTime);
 
 procedure TDebug.debugEnum(const identifier: string; const value: \<T\>);
 
+procedure debugDouble(const identifier: string; const value: double);
+
 procedure debugError(const msg: string);
 
 procedure debugEx(const msg: string; MType: TMsgDlgType);
