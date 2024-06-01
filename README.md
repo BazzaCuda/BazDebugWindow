@@ -1,5 +1,18 @@
 # BazDebugWindow
 
+**NEW** Added TDebug.debugEnum(), allowing you to pass a variable of any enumerated type and have its value reported:
+
+    type
+         TMediaType = (mtAudio, mtVideo);
+         ...         
+         FMediaType: TMediaType;
+         ...
+         FMediaType := mtAudio;
+         ...
+         TDebug.debugEnum('FMediaType', FMediaType);
+
+![Clipboard Image (1)](https://github.com/BazzaCuda/BazDebugWindow/assets/22550919/6bab8900-b929-407f-bb70-0bd6c27764b0)
+
 BazDebugWindow is a reworking of the original DebugWindow by GExperts, renamed as per their licensing requirements.
 
 A very useful tool for Delphi developers - say "goodbye" to all those ShowMessage(...) calls while trying to debug your program.
@@ -44,6 +57,8 @@ procedure debugCardinal(const identifier: string; const value: cardinal);
 procedure debugClear; // this won't cause the window to pop-up - suggested location: in your .dpr file
 
 procedure debugDateTime(const identifier: string; const value: TDateTime);
+
+procedure TDebug.debugEnum(const identifier: string; const value: \<T\>);
 
 procedure debugError(const msg: string);
 
