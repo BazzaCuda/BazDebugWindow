@@ -73,8 +73,10 @@ var
 //===========================
 function showDebugMessage(msg: string): boolean;
 begin
+  result := FALSE;
   debug(msg);
   showMessage(msg);
+  result := TRUE;
 end;
 
 function startDebugWin: hWnd;
