@@ -17,6 +17,9 @@ interface
 uses
   windows, dialogs, system.classes, system.generics.collections; // We need "Dialogs" for TMsgDlgType
 
+const
+  BazDebugWindow = TRUE;
+
 type
    TDebug = class(TObject)
      class procedure debugEnum<T>(const identifier: string; const value: T);
