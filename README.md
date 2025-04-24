@@ -58,7 +58,7 @@ procedure debugClear; // this won't cause the window to pop-up - suggested locat
 
 procedure debugDateTime(const identifier: string; const value: TDateTime);
 
-procedure TDebug.debugEnum(const identifier: string; const value: \<T\>);
+procedure TDebug.debugEnum<\T\>(const identifier: string; const value: \<T\>);
 
 procedure debugDouble(const identifier: string; const value: double);
 
