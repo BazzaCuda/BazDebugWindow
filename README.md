@@ -9,7 +9,7 @@
          ...
          FMediaType := mtAudio;
          ...
-         TDebug.debugEnum('FMediaType', FMediaType);
+         TDebug.debugEnum<TMediaType>('FMediaType', FMediaType);
 
 ![Clipboard Image (1)](https://github.com/BazzaCuda/BazDebugWindow/assets/22550919/6bab8900-b929-407f-bb70-0bd6c27764b0)
 
