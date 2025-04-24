@@ -1,6 +1,6 @@
 # BazDebugWindow
 
-**NEW** Added TDebug.debugEnum<T>(), allowing you to pass a variable of any enumerated type and have its value reported:
+**NEW** Added TDebug.debugEnum\<T\>(), allowing you to pass a variable of any enumerated type and have its value reported:
 
     type
          TMediaType = (mtAudio, mtVideo);
