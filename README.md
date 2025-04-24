@@ -1,6 +1,6 @@
 # BazDebugWindow
 
-**NEW** Added TDebug.debugEnum(), allowing you to pass a variable of any enumerated type and have its value reported:
+**NEW** Added TDebug.debugEnum\<T\>(), allowing you to pass a variable of any enumerated type and have its value reported:
 
     type
          TMediaType = (mtAudio, mtVideo);
@@ -9,7 +9,7 @@
          ...
          FMediaType := mtAudio;
          ...
-         TDebug.debugEnum('FMediaType', FMediaType);
+         TDebug.debugEnum<TMediaType>('FMediaType', FMediaType);
 
 ![Clipboard Image (1)](https://github.com/BazzaCuda/BazDebugWindow/assets/22550919/6bab8900-b929-407f-bb70-0bd6c27764b0)
 
@@ -58,7 +58,7 @@ procedure debugClear; // this won't cause the window to pop-up - suggested locat
 
 procedure debugDateTime(const identifier: string; const value: TDateTime);
 
-procedure TDebug.debugEnum(const identifier: string; const value: \<T\>);
+procedure TDebug.debugEnum\<T\>(const identifier: string; const value: \<T\>);
 
 procedure debugDouble(const identifier: string; const value: double);
 
