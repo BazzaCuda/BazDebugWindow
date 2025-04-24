@@ -20,6 +20,7 @@ uses
 const
   BazDebugWindow = TRUE;
 
+{$if BazDebugWindow}
 type
    TDebug = class(TObject)
      class procedure debugEnum<T>(const identifier: string; const value: T);
@@ -329,6 +330,9 @@ begin
   var vResult := TRttiEnumerationType.getName(value);
   debugEx(format('%s = %s', [identifier, vResult]), mtInformation);
 end;
+{$else}
+implementation
+{$endif}
 
 end.
 
