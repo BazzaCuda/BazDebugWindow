@@ -16,16 +16,20 @@
     
 **NEW** 
 
-Added `TDebug.debugEnum\<T\>()`, allowing you to pass a variable of any enumerated type and have its value reported:
+Added 
+``` Delphi
+TDebug.debugEnum<T>()
+```
+allowing you to pass a variable of any enumerated type and have its value reported:
 ``` Delphi
     type
          TMediaType = (mtAudio, mtVideo);
-         ...         
+    var            
          FMediaType: TMediaType;
-         ...
+    begin
          FMediaType := mtAudio;
-         ...
          TDebug.debugEnum<TMediaType>('FMediaType', FMediaType);
+    end;
 ```
 ![Clipboard Image (1)](https://github.com/BazzaCuda/BazDebugWindow/assets/22550919/6bab8900-b929-407f-bb70-0bd6c27764b0)
 
