@@ -41,12 +41,12 @@ A very useful tool for Delphi developers - say "goodbye" to all those `ShowMessa
 
 The BazDebugWindow will pop-up in the bottom righthand corner of your Windows desktop when you send it a debug message.
 
-This is very easily done: just add the `_debugWindow.pas` unit to your project and include it in the "uses" clause of any unit.
-N.B. You don't need to copy the unit to every project. Just add it from its current location.
+- This is very easily done: just add the `_debugWindow.pas` unit to your project and include it in the "uses" clause of any unit.
+- N.B. You don't need to copy the unit to every project. Just add it from its current location.
 
 At its most basic, just call _`debug('some string')`_ from anywhere in your code for it to appear in the BazDebugWindow.
 
-There are numerous other calls which can be made which I will detail below.
+There are numerous other calls which can be made, listed below.
 
 Initial Installation
 --------------------
@@ -78,7 +78,7 @@ procedure debugClear; // this won't cause the window to pop-up - suggested locat
 
 procedure debugDateTime(const identifier: string; const value: TDateTime);
 
-procedure TDebug.debugEnum\<T\>(const identifier: string; const value: \<T\>);
+procedure TDebug.debugEnum<T>(const identifier: string; const value: <T>);
 
 procedure debugDouble(const identifier: string; const value: double);
 
