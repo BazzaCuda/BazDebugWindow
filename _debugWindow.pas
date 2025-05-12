@@ -17,8 +17,7 @@ interface
 uses
   windows, dialogs, system.classes, system.generics.collections; // We need "Dialogs" for TMsgDlgType
 
-const
-  BazDebugWindow = TRUE;
+{$I BazDebugWindow.inc}
 
 {$if BazDebugWindow}
 type
