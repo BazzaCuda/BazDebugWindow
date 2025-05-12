@@ -115,10 +115,8 @@ procedure debugStringList(const identifier: string; const value: TStringList);
 procedure debugWarning(const msg: string);
 ```
 
-More details to follow
+More details available
 ----------------------
-
-I will expand on each of these later - I just wanted to get a basic "readme" file into the first release.zip file.
 
 Any questions or issues, go to Discussions (https://github.com/BazzaCuda/BazDebugWindow/discussions)
 
