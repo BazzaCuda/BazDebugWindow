@@ -448,7 +448,7 @@ end;
 procedure TfmDebug.actViewShowExecute(Sender: TObject);
 begin
   Show;
-  setWindowPosBottomRight;
+//  setWindowPosBottomRight;
   BringToFront;
 //  Application.BringToFront;
 //  EnsureFormVisible(Self); // BAZ
