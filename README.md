@@ -14,7 +14,7 @@
     {$endif}
     ```
     
-**NEW** 
+**NEW 2024/06/01** 
 
 Added 
 ``` Delphi
@@ -68,7 +68,7 @@ If you do this, you must run the exe immediately to register its new location.
 BazDebugWindow methods
 ----------------------
 ``` Delphi
-procedure debug(const msg: string);
+procedure debug(const msg: string); // replaces your standard showMessage(...) debug messages
 
 procedure debugBoolean(const identifier: string; const value: boolean);
 
