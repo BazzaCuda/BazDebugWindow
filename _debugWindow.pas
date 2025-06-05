@@ -22,7 +22,7 @@ uses
 {$if BazDebugWindow}
 type
    TDebug = class(TObject)
-     class procedure debugEnum<T>(const identifier: string; const value: T);
+     class procedure debugEnum<T>(const identifier: string; const value: T); // because...E2530 Type parameters not allowed on global procedure or function
    end;
 
 procedure debug(const msg: string);
